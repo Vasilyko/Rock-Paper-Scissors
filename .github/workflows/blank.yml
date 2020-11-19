@@ -26,6 +26,10 @@ jobs:
       - name: Install Node.js
         run: npm install -g npm
      
+     # Starts the npm
+       - name: Starting the npm
+         run: npm start
+     
      # Runs a single command using the runners shell
       - name: Try to build the app
         run: ng build
