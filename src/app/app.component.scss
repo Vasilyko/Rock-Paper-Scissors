@@ -1,0 +1,11 @@
+.text{
+    grid-area: image;
+    color: white;
+    align-self: start;
+    justify-self: center;
+    font-size: .4em;
+    padding: .3em 10em .3em 10em;
+    margin: 0 0 -4em;
+
+    filter: drop-shadow(epx 3px 2px black);
+}
