@@ -9,3 +9,21 @@
 
     filter: drop-shadow(epx 3px 2px black);
 }
+img
+{
+width: fit-content;
+}
+
+button{
+    width:40px; 
+    height:40px; 
+    border: 0;
+    background-size: 100%; /* To fill the dimensions of container (button), or */
+    background-size: 40px auto; /* to specify dimensions explicitly */
+  }
+
+.paper{
+    background-image: url("../assets/Rock.jpg");
+    border: solid;
+    background-size: 100%;
+}
