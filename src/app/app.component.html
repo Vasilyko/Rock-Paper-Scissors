@@ -11,7 +11,7 @@
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
-    color: #333;
+    color: rgb(84, 29, 236);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -64,7 +64,7 @@
     display: flex;
     margin: 82px auto 32px;
     padding: 0 16px;
-    max-width: 960px;
+    max-width: 1960px;
     flex-direction: column;
     align-items: center;
   }
@@ -79,22 +79,22 @@
   }
 
   .card svg.material-icons path {
-    fill: #888;
+    fill: rgb(230, 7, 7);
   }
 
   .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 16px;
+    margin-top: 160px;
   }
 
   .card {
-    border-radius: 4px;
+    border-radius: 20px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 40px;
-    width: 200px;
+    height: 500px;
+    width: 400px;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -102,7 +102,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-    line-height: 24px;
+    line-height: 240px;
   }
 
   .card-container .card:not(:last-child) {
@@ -110,7 +110,7 @@
   }
 
   .card.card-small {
-    height: 16px;
+    height: 160px;
     width: 168px;
   }
 
@@ -175,7 +175,7 @@
     padding-top: 45px;
     margin-top: 8px;
     overflow: hidden;
-    background-color: rgb(15, 15, 16);
+    background-color: rgb(4, 4, 255);
   }
 
   .terminal::before {
@@ -276,8 +276,8 @@
     }
 
     .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
+      height: 250px;
+      margin: 20px 0;
     }
 
     .card.highlight-card span {
@@ -322,13 +322,13 @@
   <p>Here are some links to help you get started:</p>
 
   <div class="card-container">
-    <button class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+    <button class="card scissors" target="_blank" rel="noopener" href="https://angular.io/tutorial">
  
-      <span>Scissors</span>
+      <span color="primary">Scissors</span>
 
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </button>
 
-    <button class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
+    <button class="card rock" target="_blank" rel="noopener" href="https://angular.io/cli">
        
       <span>Rock </span>
 

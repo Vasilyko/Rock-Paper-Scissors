@@ -23,7 +23,19 @@ button{
   }
 
 .paper{
-    background-image: url("../assets/Rock.jpg");
+    background-image: url("../assets/paper.jpg");
+    border: solid;
+    background-size: 100%;
+}
+
+.rock{
+    background-image: url("../assets/rock.jpg");
+    border: solid;
+    background-size: 100%;
+}
+
+.scissors{
+    background-image: url("../assets/Scissors.svg");
     border: solid;
     background-size: 100%;
 }
