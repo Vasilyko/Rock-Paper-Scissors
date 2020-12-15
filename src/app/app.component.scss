@@ -1,0 +1,41 @@
+.text{
+    grid-area: image;
+    color: white;
+    align-self: start;
+    justify-self: center;
+    font-size: .4em;
+    padding: .3em 10em .3em 10em;
+    margin: 0 0 -4em;
+
+    filter: drop-shadow(epx 3px 2px black);
+}
+img
+{
+width: fit-content;
+}
+
+button{
+    width:40px; 
+    height:40px; 
+    border: 0;
+    background-size: 100%; /* To fill the dimensions of container (button), or */
+    background-size: 40px auto; /* to specify dimensions explicitly */
+  }
+
+.paper{
+    background-image: url("../assets/paper.jpg");
+    border: solid;
+    background-size: 100%;
+}
+
+.rock{
+    background-image: url("../assets/rock.jpg");
+    border: solid;
+    background-size: 100%;
+}
+
+.scissors{
+    background-image: url("../assets/Scissors.svg");
+    border: solid;
+    background-size: 100%;
+}
