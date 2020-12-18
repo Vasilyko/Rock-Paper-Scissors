@@ -194,7 +194,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -227,35 +227,21 @@
     line-height: 20px;
   }
 
+  .title {
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
+
+  .credits {
+    margin: 25px 100px;
+  }
+
   footer a {
     display: flex;
     align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
   }
 
   svg#clouds {
@@ -266,11 +252,19 @@
     width: 1920px;
   }
 
+  mat-slide-toggle-content {
+    vertical-align: top;
+    display: inline-block;
+    line-height: 24px;
+
+  }
+
+
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -301,46 +295,52 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
-  <span>Rock, Scissors, Paper-Game</span>
-    <div class="spacer"></div>
-<p>thx for visiting ;)</p>
+  <p style="font-weight:bold" class="title">Rock, Scissors, Paper-Game</p>
+  <div class="spacer"></div>
+  <p class="credits">thx for visiting ;)</p>
 </div>
 
 <div class="content" role="main">
-  
+
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
-  <mat-slide-toggle checkedLabel="Let's Go" uncheckedLabel="Let's Stay"l>Slide me!</mat-slide-toggle>
-  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+  <p style="font-weight:bold">Play against random Players or the ultimate, unbeaten Super-BOT</p>
+  <mat-slide-toggle labelPosition="before"> BOT </mat-slide-toggle>
+
+  <div class="score-board">
+    <div id="user-label" class="badge">user</div>
+    <div id="computer-label" class="badge">BOT</div>
+    <span id="user-score">0</span>:<span id="computer-score">0</span>
+  </div>
+
+  <h1 id="action-message">You Can Make Your Move</h1>
+  <div class="result">
+    <p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>
+  </div>
+  
   <div class="card-container">
-    <button class="card scissors" target="_blank" rel="noopener" href="https://angular.io/tutorial">
- 
-      <span color="">Scissors </span>
-
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </button>
-
-    <button class="card rock" target="_blank" rel="noopener" href="https://angular.io/cli">
-       
-      <span>Rock </span>
+    <button class="card scissors" target="_blank" rel="noopener" (click)='userPick("scissors")'>
+      <span style="font-weight:bold" color="red" class="text" >Scissors</span>
     </button>
 
-        <button class="card paper" target="_blank" rel="noopener" href="https://blog.angular.io/">
-          
-          <span>Paper</span>
+    <button class="card rock" target="_blank" rel="noopener" (click)='userPick("rock")'>
+      <span style="font-weight:bold" class="text"> Rock </span>
+    </button>
 
-        </button>  
+    <button class="card paper" target="_blank" rel="noopener" (click)='userPick("paper")'>
+      <span style="font-weight:bold" class="text" >Paper</span>
+    </button>
 
   </div>
+
   <body>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="/__/firebase/8.1.2/firebase-app.js"></script>
-    
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
-    
+
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
+    <script src="./app.js" charset="utf-8"></script>
   </body>
-

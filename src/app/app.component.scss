@@ -1,12 +1,8 @@
 .text{
     grid-area: image;
-    color: white;
-    align-self: start;
-    justify-self: center;
-    font-size: .4em;
-    padding: .3em 10em .3em 10em;
-    margin: 0 0 -4em;
+    color:rgb(0, 255, 136) ;
 
+    font-size: 4em;
     filter: drop-shadow(epx 3px 2px black);
 }
 img
@@ -38,4 +34,36 @@ button{
     background-image: url("../assets/Scissors.svg");
     border: solid;
     background-size: 100%;
+}
+.score-board{
+    border: 4px solid #ff0707;
+    width: 150px;
+    margin: 40px auto;
+    font-size: 20px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.badge{
+background: deepskyblue;
+color: whitesmoke;
+font-size: 14px;
+padding: 2px 10px;
+font-family: Asap, sans-serif;
+}
+
+#user-label
+{
+    position: absolute;
+    top: 10px;
+    left: -25px;
+}
+
+#computer-label
+{
+    position: absolute;
+    top: 10px;
+    left: 165px;
 }
