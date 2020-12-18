@@ -314,19 +314,19 @@
 
   <h1 id="action-message">You Can Make Your Move</h1>
   <div class="result">
-    <p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>
+  <!--  <p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>-->
   </div>
-  
+
   <div class="card-container">
-    <button class="card scissors" target="_blank" rel="noopener" (click)='userPick("scissors")'>
+    <button class="card scissors" target="_blank" rel="noopener">
       <span style="font-weight:bold" color="red" class="text" >Scissors</span>
     </button>
 
-    <button class="card rock" target="_blank" rel="noopener" (click)='userPick("rock")'>
+    <button class="card rock" target="_blank" rel="noopener" >
       <span style="font-weight:bold" class="text"> Rock </span>
     </button>
 
-    <button class="card paper" target="_blank" rel="noopener" (click)='userPick("paper")'>
+    <button class="card paper" target="_blank" rel="noopener" >
       <span style="font-weight:bold" class="text" >Paper</span>
     </button>
 
