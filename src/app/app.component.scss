@@ -34,6 +34,8 @@ button{
     background-image: url("../assets/Scissors.svg");
     border: solid;
     background-size: 100%;
+    width: 600px;
+    height: 400px;
 }
 .score-board{
     border: 4px solid #ff0707;
@@ -67,3 +69,13 @@ font-family: Asap, sans-serif;
     top: 10px;
     left: 165px;
 }
+
+.dot {
+    height: 45px;
+    width: 45px;
+    background-color:rgb(119, 0, 255);
+    border-radius: 50%;
+text-align: center;
+    color: orangered;
+    font-size: 30px;
+  }

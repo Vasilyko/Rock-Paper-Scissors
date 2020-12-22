@@ -304,7 +304,7 @@
 
   <!-- Resources -->
   <p style="font-weight:bold">Play against random Players or the ultimate, unbeaten Super-BOT</p>
-  <mat-slide-toggle labelPosition="before"> BOT </mat-slide-toggle>
+ <p>Your Highscore:</p> <span class="dot">{{highesthighscore}}</span> 
 
   <div class="score-board">
     <div id="user-label" class="badge">user: {{userSelection}}</div>
@@ -333,4 +333,5 @@
   </div>
 
   <body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>

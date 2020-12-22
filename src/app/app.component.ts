@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'RPS';
+  highesthighscore = 0;
   userScore = 0;
   botScore = 0;
+  highscore = 0;
   userSelection: string ='';
   botSelection: string = '';
   action: string = '';
@@ -17,6 +19,31 @@ export class AppComponent  {
     'rock',
     'paper',
     'scissors'
+  ];
+  winslogans = [
+    'King!',
+    'Congratulation',
+    'You got it!',
+    'YesSS!',
+    'Anotherone',
+    'Einer geht noch!',
+    'Gib Ihm'
+  ];
+  tieslogans = [
+    'Das war knapp...',
+    'Unentschieden ist nicht verloren',
+    'Draw, aber nicht my life',
+    'Versuchs doch mal mit Schere',
+    'Hör auf solange du es noch kannst'
+  ];
+  loseslogans = [
+    'Pech gehabt...',
+    'Versuchs nochmal!',
+    'Kann passieren',
+    'Du bist scheisse',
+    'sogar ein dummer Bot macht dich fertig',
+    'ahahahah',
+
   ];
 
   userPick(userWeapon: string): void {
@@ -45,6 +72,9 @@ export class AppComponent  {
     this.action = 'beats';
     this.status = '. You win!';
     this.clearField();
+    this.highscore ++;
+    const randomNum = Math.floor(Math.random() * 7);
+    alert(this.winslogans[randomNum]);
   }
 
 
@@ -55,6 +85,8 @@ export class AppComponent  {
     this.action = 'loses to';
     this.status = '. You lose!';
     this.clearField();
+    this.highscore = 0;
+    this.newHighscore();
   }
 
   draw(user: string, comp: string) {
@@ -63,6 +95,13 @@ export class AppComponent  {
     this.action = 'and';
     this.status = '. You draw!';
     this.clearField();
+  }
+
+  newHighscore() {
+    
+    if (this.highscore > this.highesthighscore) {
+      this.highesthighscore = this.highscore;
+    }
   }
 
   checkResult() {
@@ -83,7 +122,6 @@ export class AppComponent  {
         this.draw(userChoice, compChoice);
         break;
     }
-
   }
 }
 
