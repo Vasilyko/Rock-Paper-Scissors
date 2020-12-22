@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ export class AppComponent  {
     'YesSS!',
     'Anotherone',
     'Einer geht noch!',
-    'Gib Ihm'
+    'Gib Ihm',
+    'Good Job Dog'
   ];
   tieslogans = [
     'Das war knapp...',
@@ -74,7 +76,11 @@ export class AppComponent  {
     this.clearField();
     this.highscore ++;
     const randomNum = Math.floor(Math.random() * 7);
-    alert(this.winslogans[randomNum]);
+    Swal.fire(
+      'Gewonnen ;)',
+      this.winslogans[randomNum],
+      'success'
+    )
   }
 
 
@@ -87,6 +93,12 @@ export class AppComponent  {
     this.clearField();
     this.highscore = 0;
     this.newHighscore();
+    const randomNum = Math.floor(Math.random() * 7);
+    Swal.fire(
+      'Verloren :/',
+      this.tieslogans[randomNum],
+      'error'
+    )
   }
 
   draw(user: string, comp: string) {
@@ -95,6 +107,12 @@ export class AppComponent  {
     this.action = 'and';
     this.status = '. You draw!';
     this.clearField();
+    const randomNum = Math.floor(Math.random() * 7);
+    Swal.fire(
+      'Draw',
+      this.loseslogans[randomNum],
+      'warning'
+    )
   }
 
   newHighscore() {
@@ -103,7 +121,6 @@ export class AppComponent  {
       this.highesthighscore = this.highscore;
     }
   }
-
   checkResult() {
     const userChoice = this.userSelection;
     const compChoice = this.botSelection;

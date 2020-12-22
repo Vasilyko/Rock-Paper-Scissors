@@ -291,7 +291,7 @@
     }
   }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.5/dist/sweetalert2.all.min.js"></script>
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
@@ -318,11 +318,11 @@
   </div>
 
   <div class="card-container" id="scissors" >
-    <button class="card scissors" (click)='userPick("scissors")'>
+    <button style="width: 40%" style="height: 40%" class="card scissors" (click)='userPick("scissors")'>
       <span style="font-weight:bold" color="red" class="text" >Scissors</span>
     </button>
 
-    <button class="card rock" id="rock" (click)='userPick("rock")'>
+    <button style="width: 40%" style="height: 40%" class="card rock" id="rock" (click)='userPick("rock")'>
       <span style="font-weight:bold" class="text" > Rock </span>
     </button>
 
@@ -333,5 +333,5 @@
   </div>
 
   <body>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
   </body>
