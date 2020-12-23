@@ -291,7 +291,7 @@
     }
   }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.5/dist/sweetalert2.all.min.js"></script>
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
@@ -304,43 +304,34 @@
 
   <!-- Resources -->
   <p style="font-weight:bold">Play against random Players or the ultimate, unbeaten Super-BOT</p>
-  <mat-slide-toggle labelPosition="before"> BOT </mat-slide-toggle>
+ <p>Your Highscore:</p> <span class="dot">{{highesthighscore}}</span> 
 
   <div class="score-board">
-    <div id="user-label" class="badge">user</div>
-    <div id="computer-label" class="badge">BOT</div>
-    <span id="user-score">0</span>:<span id="computer-score">0</span>
+    <div id="user-label" class="badge">user: {{userSelection}}</div>
+    <div id="computer-label" class="badge">BOT:{{botSelection}}</div>
+    <span id="user-score">{{botScore}}</span>:<span id="computer-score">{{botScore}}</span>
   </div>
 
   <h1 id="action-message">You Can Make Your Move</h1>
   <div class="result">
-  <!--  <p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>-->
+ <p *ngIf="status">{{userSelection}} {{action}} {{botSelection}}{{status}} </p>
   </div>
 
-  <div class="card-container">
-    <button class="card scissors" target="_blank" rel="noopener">
+  <div class="card-container" id="scissors" >
+    <button style="width: 40%" style="height: 40%" class="card scissors" (click)='userPick("scissors")'>
       <span style="font-weight:bold" color="red" class="text" >Scissors</span>
     </button>
 
-    <button class="card rock" target="_blank" rel="noopener" >
-      <span style="font-weight:bold" class="text"> Rock </span>
+    <button style="width: 40%" style="height: 40%" class="card rock" id="rock" (click)='userPick("rock")'>
+      <span style="font-weight:bold" class="text" > Rock </span>
     </button>
 
-    <button class="card paper" target="_blank" rel="noopener" >
+    <button class="card paper" id="paper" (click)='userPick("paper")'>
       <span style="font-weight:bold" class="text" >Paper</span>
     </button>
 
   </div>
 
   <body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.1.2/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    <script src="./app.js" charset="utf-8"></script>
+    
   </body>
