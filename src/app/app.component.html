@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -307,27 +298,27 @@
   <mat-slide-toggle labelPosition="before"> BOT </mat-slide-toggle>
 
   <div class="score-board">
-    <div id="user-label" class="badge">user</div>
-    <div id="computer-label" class="badge">BOT</div>
-    <span id="user-score">0</span>:<span id="computer-score">0</span>
+    <div id="user-label" class="badge">user: {{userSelected}}</div>
+    <div id="computer-label" class="badge">BOT:{{compSelected}}</div>
+    <span id="user-score">{{userScore}}</span>:<span id="computer-score">{{compScore}}</span>
   </div>
 
-  <h1 id="action-message">You Can Make Your Move</h1>
+  <h1 *ngIf="!status">You Can Make Your Move</h1>
+  <h1 *ngIf="status"> {{userSelected}} {{action}} {{compSelected}} {{status}}</h1>
   <div class="result">
-  <!--  <p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>-->
   </div>
 
-  <div class="card-container">
-    <button class="card scissors" target="_blank" rel="noopener">
-      <span style="font-weight:bold" color="red" class="text" >Scissors</span>
+  <div class="card-container" (click)='userPick("scissors")'>
+    <button class="card scissors">
+      <span style="font-weight:bold" class="text">Scissors</span>
     </button>
 
-    <button class="card rock" target="_blank" rel="noopener" >
+    <button class="card rock" (click)='userPick("rock")'>
       <span style="font-weight:bold" class="text"> Rock </span>
     </button>
 
-    <button class="card paper" target="_blank" rel="noopener" >
-      <span style="font-weight:bold" class="text" >Paper</span>
+    <button class="card paper" (click)='userPick("paper")'>
+      <span style="font-weight:bold" class="text">Paper</span>
     </button>
 
   </div>
