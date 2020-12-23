@@ -19,19 +19,43 @@ export class AppComponent {
     'paper',
     'scissors'
   ];
-  loseslogans = [];
-  winslogans = [];
+  loseslogans = [
+    'Guter Dienst bleibt unverloren.',
+    'Jedes Ding hat seine Zeit.',
+    'Wer kämpft, kann verlieren, wer nicht kämpft, hat schon verloren.',
+    'Wo viel verloren wird, ist manches zu gewinnen.',
+    'Gewinnen kann, wer viel verloren, schnell.'
+  ];
+  winslogans = [
+    'Seid im Sieg nicht überheblich!',
+    'Seid im Sieg nicht überheblich!',
+    'Der größte Sieg ist immer der nächste.',
+    'Nicht jeder Sieg ist auch ein Gewinn.',
+    'Der Sieg ist bei den Überwundnen.',
+    'Siegen ist schön, doch der wahre Genuss liegt im Trösten der Verlierer.',
+    'Große Siege werden nicht ohne Risiko errungen.',
+    'Nur durch Kampf gewinnt man Siege',
+    'Siegestrunkene werden leicht süchtig.',
+    'Trotze, so bleibt dir der Sieg.',
+    'Man soll die Beute nicht vor dem Sieg teilen.',
+    'Es ist leicht, einen Sieg zu erkämpfen, doch schwer, ihn zu bewahren.',
+    'Man soll die Beute nicht vor dem Sieg teilen.'
+  ];
   drawslogans = [
-    'Versuch es doch nocheinmal'
+    'Versuch es doch nocheinmal',
+    'Zumindest nicht verloren',
+    'Bemühe dich bisschen mehr!',
+    'Wer mit einem starken Gedanken spielt, kann oft schon mit einem Unentschieden sehr zufrieden sein.',
+    'Auch ein unentschieden ist ein Sieg, weil man nicht verloren hat'
   ];
 
 userPick(userWeapon: string): void {
   this.userSelected = userWeapon;
-  console.log( this.userSelected);
+  console.log('User:' + this.userSelected);
   setTimeout( () => {
     const randomNum = Math.floor(Math.random() * 3);
     this.compSelected = this.compWeapons[randomNum];
-    console.log(this.compSelected);
+    console.log('BOT:' + this.compSelected);
     this.checkResult();
   }, 1000);
 }
@@ -51,6 +75,18 @@ win(user: string, bot: string) {
   this.action = 'beats';
   this.status = '. You win!';
   this.clearField();
+  const randomNum = Math.floor(Math.random() * 12);
+  Swal.fire(
+    {
+      title: this.winslogans[randomNum],
+      padding: '3em',
+      timer: 5000,
+      backdrop: `
+        rgba(0,0,123,0.4)
+        no-repeat
+      `
+    }
+    )
 }
 
 
@@ -61,6 +97,18 @@ lose(user: string, comp: string) {
   this.action = 'loses to';
   this.status = '. You lose!';
   this.clearField();
+  const randomNum = Math.floor(Math.random() * 5);
+  Swal.fire(
+    {
+      title: this.loseslogans[randomNum],
+      padding: '3em',
+      timer: 5000,
+      backdrop: `
+        rgba(0,0,123,0.4)
+        no-repeat
+      `
+    }
+    )
 }
 
 draw(user: string, comp: string) {
@@ -69,7 +117,20 @@ draw(user: string, comp: string) {
   this.action = 'and';
   this.status = '. You draw!';
   this.clearField();
-  Swal.fire('Any fool can use a computer')
+  const randomNum = Math.floor(Math.random() * 5);
+  Swal.fire(
+  {
+    title: this.drawslogans[randomNum],
+    padding: '3em',
+    timer: 5000,
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("../assets/tenor.gif")
+      left top
+      no-repeat
+    `
+  }
+  )
 }
 
 checkResult() {
