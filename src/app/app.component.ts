@@ -78,11 +78,14 @@ win(user: string, bot: string) {
   const randomNum = Math.floor(Math.random() * 12);
   Swal.fire(
     {
-      title: this.winslogans[randomNum],
+      title: "Gewonnen",
+      text: this.winslogans[randomNum],
       padding: '3em',
       timer: 5000,
       backdrop: `
-        rgba(0,0,123,0.4)
+        rgba(77, 219, 0, 0.78)
+        url("https://media.giphy.com/media/cQNRp4QA8z7B6/giphy.gif")
+        top
         no-repeat
       `
     }
@@ -100,11 +103,14 @@ lose(user: string, comp: string) {
   const randomNum = Math.floor(Math.random() * 5);
   Swal.fire(
     {
-      title: this.loseslogans[randomNum],
+      title: "Verloren",
+      text:this.loseslogans[randomNum], 
       padding: '3em',
       timer: 5000,
       backdrop: `
-        rgba(0,0,123,0.4)
+        rgba(360,100,46,0.59)
+        url("../assets/tenor.gif")
+        top
         no-repeat
       `
     }
@@ -120,13 +126,14 @@ draw(user: string, comp: string) {
   const randomNum = Math.floor(Math.random() * 5);
   Swal.fire(
   {
-    title: this.drawslogans[randomNum],
+    title: "Unentschieden",
+    text: this.drawslogans[randomNum],
     padding: '3em',
     timer: 5000,
     backdrop: `
       rgba(0,0,123,0.4)
-      url("../assets/tenor.gif")
-      left top
+      url("https://media.giphy.com/media/xT0GqssRweIhlz209i/source.gif")
+      top
       no-repeat
     `
   }
