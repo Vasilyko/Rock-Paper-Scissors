@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -49,6 +50,13 @@ export class AppComponent {
     'Auch ein unentschieden ist ein Sieg, weil man nicht verloren hat'
   ];
 
+  anzSpiele = 0;
+  anzSiege = 0;
+  schere =0;
+  stein = 0;
+  papier = 0;
+  favoriteItem = "";
+
 userPick(userWeapon: string): void {
   this.userSelected = userWeapon;
   console.log('User:' + this.userSelected);
@@ -65,7 +73,7 @@ clearField() {
     this.status = '';
     this.userSelected = '';
     this.compSelected = '';
-  }, 1500);
+  }, 500);
 }
 
 win(user: string, bot: string) {
@@ -91,8 +99,6 @@ win(user: string, bot: string) {
     }
     )
 }
-
-
 lose(user: string, comp: string) {
   this.compScore ++;
   this.userSelected = user;
@@ -140,6 +146,36 @@ draw(user: string, comp: string) {
   )
 }
 
+setCookie() {
+  this.anzSpiele++;
+  if (this.userSelected == 'paper')
+   {
+     this.papier++;  
+  }
+  else if(this.userSelected == 'scissors'){
+this.schere++;
+  }
+  else{
+this.stein++;
+  }
+  
+  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem;
+}
+
+  checkForFavoriteItem() {
+if(this.papier >= this.stein){
+ this.favoriteItem = "paper";
+  }
+
+else if(this.schere >= this.stein)
+{
+  this.favoriteItem = "scissors";
+}
+else{
+  this.favoriteItem = "rock"
+}
+this.setCookie()
+  }
 checkResult() {
   const userChoice = this.userSelected;
   const compChoice = this.compSelected;
@@ -158,7 +194,7 @@ checkResult() {
       this.draw(this.userSelected, compChoice);
       break;
   }
-
+  this.checkForFavoriteItem();
 }
 
 }
