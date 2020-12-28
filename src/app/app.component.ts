@@ -138,7 +138,7 @@ draw(user: string, comp: string) {
     timer: 5000,
     backdrop: `
       rgba(0,0,123,0.4)
-      url("https://media.giphy.com/media/xT0GqssRweIhlz209i/source.gif")
+      url("https://media.giphy.com/media/3o6ZtgvVil611Pxlmg/giphy.gif")
       top
       no-repeat
     `
