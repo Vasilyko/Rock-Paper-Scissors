@@ -48,20 +48,18 @@
   .card svg.material-icons path {
     fill: rgb(230, 7, 7);
   }
-
   .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 160px;
+    margin-top: 60px;
   }
-
   .card {
     border-radius: 20px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 500px;
-    width: 400px;
+    height: 550px;
+    width: 450px;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -70,6 +68,8 @@
     align-items: center;
     transition: all 0.2s ease-in-out;
     line-height: 240px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .card-container .card:not(:last-child) {
@@ -139,6 +139,12 @@
       display: none;
       visibility: hidden;
     }
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 160px;
+  }
   }
 </style>
 
@@ -165,6 +171,9 @@
   <h1 *ngIf="status"> {{userSelected}} {{action}} {{compSelected}} {{status}}</h1>
   <div class="result">
   </div>
+  <h2 class="stats">Dein Favorit: {{favoriteItem}}</h2>
+  <h2 class="stats"> Deine Siegesrate: 
+    {{this.siegesrate | percent }} </h2>
 
   <div class="card-container" >
     <button class="card scissors" (click)='userPick("scissors")'>

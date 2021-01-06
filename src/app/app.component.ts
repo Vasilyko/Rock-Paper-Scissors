@@ -52,6 +52,7 @@ export class AppComponent {
 
   anzSpiele = 0;
   anzSiege = 0;
+  siegesrate = 0.00;
   schere =0;
   stein = 0;
   papier = 0;
@@ -158,11 +159,12 @@ this.schere++;
   else{
 this.stein++;
   }
-  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem;
+  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem + "Siege:" + this.anzSiege;
+  this.siegesrate = (this.userScore / this.anzSpiele);
 }
 
   checkForFavoriteItem() {
-if(this.papier >= this.stein){
+if(this.papier > this.stein){
  this.favoriteItem = "paper";
   }
 
