@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService} from 'ngx-cookie-service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +15,7 @@ export class AppComponent {
   compSelected!: string;
   action!: string;
   status!: string;
+  cookieservice!: CookieService;
   compWeapons = [
     'rock',
     'paper',
@@ -28,7 +29,6 @@ export class AppComponent {
     'Gewinnen kann, wer viel verloren, schnell.'
   ];
   winslogans = [
-    'Seid im Sieg nicht überheblich!',
     'Seid im Sieg nicht überheblich!',
     'Der größte Sieg ist immer der nächste.',
     'Nicht jeder Sieg ist auch ein Gewinn.',
@@ -52,6 +52,7 @@ export class AppComponent {
 
   anzSpiele = 0;
   anzSiege = 0;
+  siegesrate = 0.00;
   schere =0;
   stein = 0;
   papier = 0;
@@ -158,12 +159,12 @@ this.schere++;
   else{
 this.stein++;
   }
-  
-  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem;
+  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem + "Siege:" + this.anzSiege;
+  this.siegesrate = (this.userScore / this.anzSpiele);
 }
 
   checkForFavoriteItem() {
-if(this.papier >= this.stein){
+if(this.papier > this.stein){
  this.favoriteItem = "paper";
   }
 
@@ -196,5 +197,4 @@ checkResult() {
   }
   this.checkForFavoriteItem();
 }
-
 }
