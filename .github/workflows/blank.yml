@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-    - name: npm dependencies
+      - name: npm dependencies
         run: npm install     
       - name: Build
         run: npm run build -- --prod
