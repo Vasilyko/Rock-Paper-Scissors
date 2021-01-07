@@ -42,6 +42,6 @@ jobs:
      
       # Runs the npm
       - name: Starting the npm
-        run: ng build RPS
+        run: ng build -prod
        
 
