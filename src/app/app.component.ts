@@ -149,7 +149,12 @@ draw(user: string, comp: string) {
 
 setCookie() {
   this.anzSpiele++;
-  if (this.userSelected == 'paper')
+  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem + "Siege:" + this.anzSiege;
+  this.siegesrate = (this.userScore / this.anzSpiele);
+}
+
+  checkForFavoriteItem() {
+    if (this.userSelected == 'paper')
    {
      this.papier++;  
   }
@@ -159,11 +164,6 @@ this.schere++;
   else{
 this.stein++;
   }
-  document.cookie = "Anzahl Spiele:  " + this.anzSpiele + "Lieblings-Item:  " + this.favoriteItem + "Siege:" + this.anzSiege;
-  this.siegesrate = (this.userScore / this.anzSpiele);
-}
-
-  checkForFavoriteItem() {
 if(this.papier > this.stein){
  this.favoriteItem = "paper";
   }
