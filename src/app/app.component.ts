@@ -116,7 +116,7 @@ lose(user: string, comp: string) {
       timer: 5000,
       backdrop: `
         rgba(360,100,46,0.59)
-        url("../assets/tenor.gif")
+        url("https://media.giphy.com/media/x88yuKqdpWbC0/giphy.gif")
         top
         no-repeat
       `
